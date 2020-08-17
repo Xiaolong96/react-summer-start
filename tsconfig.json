@@ -2,15 +2,8 @@
   "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "typeRoots": [
-      "node_modules/@types",
-      "./src/typings"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "typeRoots": ["node_modules/@types", "./src/typings"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,19 +15,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "experimentalDecorators": true,
     "jsx": "react"
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "build",
-    "config",
-    "lib",
-    "public",
-    "scripts",
-    "vm",
-    "wikidata"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "config", "lib", "public", "scripts", "vm", "wikidata"]
 }

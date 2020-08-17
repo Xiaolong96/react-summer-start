@@ -38,7 +38,8 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     // 0=off, 1=warn, 2=error
-    '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
+    'no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': 2,
     'react/display-name': 0,
     'react/prop-types': 0,
   },
