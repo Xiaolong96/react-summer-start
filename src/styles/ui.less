@@ -1,0 +1,99 @@
+@import './variables.less';
+@import './mixins/ellipsis.less';
+
+// ant-message
+.ant-message {
+  top: initial;
+  bottom: 24%;
+}
+
+// ant-form
+.s-form {
+  h3.tit {
+    margin-bottom: @smallSpace;
+    color: @darkFontColor;
+    font-weight: normal;
+    font-size: @baseFontSize;
+  }
+
+  .info-form {
+    margin-bottom: @baseSpace;
+    overflow: hidden;
+    border: 1px solid @gray-border;
+    border-left: 0;
+    > .ant-row {
+      display: flex;
+      align-items: stretch;
+      border-bottom: 1px solid @gray-border;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    .ant-form-item {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      .ant-form-item-control,
+      .ant-form-item-label {
+        min-height: 32px;
+        padding: 2px @smallSpace;
+        line-height: 32px;
+      }
+      span.ant-form-item-children {
+        display: block;
+        .ellipsis();
+      }
+      .ant-form-item-label {
+        min-width: 84px;
+        font-size: @smallFontSize;
+        text-align: left;
+        background-color: @white-off;
+        border-right: 1px solid @gray-border;
+        border-left: 1px solid @gray-border;
+        & > label {
+          color: @baseFontColor;
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      .ant-form-item-control-wrapper {
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .ant-input {
+        &:not(textarea) {
+          height: @smallHeight;
+        }
+
+        margin: 0;
+      }
+
+      .textarea-with-count {
+        .ant-input {
+          height: 100%;
+          margin: 0;
+          padding: @smallSpace;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    &.ant-form-inline .ant-form-item-with-help {
+      margin-bottom: 0;
+    }
+
+    .has-error .ant-form-explain {
+      margin-top: 4px;
+    }
+    &.bb-0 {
+      border-bottom: none;
+    }
+    .height0 {
+      height: 0;
+    }
+  }
+}

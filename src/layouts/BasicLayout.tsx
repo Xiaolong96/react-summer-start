@@ -2,6 +2,7 @@ import React from 'react';
 import ProLayout, {
   MenuDataItem,
   BasicLayoutProps as ProLayoutProps,
+  // SettingDrawer,
 } from '@ant-design/pro-layout';
 import { renderRoutes } from '../routes/index';
 import { Link, useHistory } from 'react-router-dom';
@@ -20,11 +21,17 @@ const TitleDom = () => {
 
 const BasicLayout: React.FC<BasicLayoutProps> = props => {
   const history = useHistory();
+
+  // const [settings, setSettings] = useState({});
+
   return (
     <ProLayout
-      title="Summer"
+      title="React 模板"
       logo={logo}
       // route={props.route}
+      // {...settings}
+      // layout="mix"
+      siderWidth={180}
       onMenuHeaderClick={() => history.push('/')}
       menuItemRender={(menuItemProps, defaultDom) => {
         if (menuItemProps.isUrl || !menuItemProps.path) {
@@ -49,10 +56,11 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
         );
       }}
       headerContentRender={TitleDom}
-      rightContentRender={() => <div>RightContent</div>}
+      rightContentRender={() => <div style={{ color: '#fff' }}>RightContent</div>}
       {...props}
     >
-      {renderRoutes(props.route ? props.route.routes : [], true)}
+      {renderRoutes(props.route?.routes, true)}
+      {/* <SettingDrawer settings={settings} onSettingChange={setSettings} /> */}
     </ProLayout>
   );
 };
